@@ -1,0 +1,13 @@
+<h1> Segundo Componente </h1>
+
+
+<!-- fazendo a alteração via metodo da data-binding-component
+<input type="text" (input)="obtemNumero($event.target.value)"/>
+<h1>{{numero}}</h1>-->
+
+
+<input type="text" (change)="this.numero = $event.target.value"/>
+<h1>{{numero}}</h1>
+
+<!--<input type="text" (blur)="this.numero = $event.target.value"/>
+<h1>{{numero}}</h1>-->

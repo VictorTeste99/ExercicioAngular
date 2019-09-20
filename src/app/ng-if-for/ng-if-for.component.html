@@ -1,0 +1,51 @@
+
+
+<!-- a variaveil "numero" foi criada no component, setando o valor 1, ou seja, se o ngIf
+     identicar um valor diferente, não retornará o valor
+<h1 *ngIf="numero === 1"> Esse será exibido </h1>-->
+
+<!-- a variaveil "number" foi criada no component, sem valor, ou seja, se o ngIf
+     identicar a logica abaixo, exibirá o retorno-->
+
+     <!--verifica se é maior-->
+<br>
+<br>
+<span>Verifica se é maior que 50</span><br>
+
+<input type="text" (input)="maior = $event.target.value" />
+<h1 *ngIf="maior >= 50">Maior que ou igual a 50</h1>
+<br>
+<br>
+     <!--verifica se é menor-->
+<span>Verifica se é menor que 50</span>
+<br>
+<input type="text" (input)="menor = $event.target.value" />
+<h1 *ngIf="menor <= 50">menor ou igual a50</h1>
+<br>
+<br>
+
+<!--verifica se é maior ou menor-->
+<span>Verifica se é maior ou menor que 50</span>
+<br>
+<input type="text" (input)="verify = $event.target.value" />
+<!--<br>
+<div *ngIf="verify > 50; else elseOne">Maior q 50.</div>
+<ng-template #elseOne>Menor q 50.</ng-template>
+-->
+<br>
+
+
+
+<h1>
+<ng-container *ngIf="verify > 50">
+        Maior que 50
+        </ng-container>
+        
+        <ng-container *ngIf="verify < 50">
+        Menor que 50
+        </ng-container>
+        
+        <ng-container *ngIf="verify == 50">
+        É igual a 50
+        </ng-container>
+</h1>
